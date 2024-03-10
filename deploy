@@ -1,6 +1,6 @@
-Docker_Image_and_Tag_Name=""
-REPOSITORY=""
-PROJECT_ID=""
+Docker_Image_and_Tag_Name="valkyrie-prod:v0.0.1"
+REPOSITORY="valkyrie-docker"
+PROJECT_ID="qwiklabs-gcp-03-ed4b783fcd1f"
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Task 1:-
@@ -53,7 +53,7 @@ docker images
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-docker tag <Image_ID> us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$Docker_Image_and_Tag_Name
+docker tag dd776f37d0c7 us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$Docker_Image_and_Tag_Name
 
 docker push us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$Docker_Image_and_Tag_Name
 
@@ -65,6 +65,6 @@ Task 4:-
 
 sed -i s#IMAGE_HERE#us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$Docker_Image_and_Tag_Name#g k8s/deployment.yaml
 
-gcloud container clusters get-credentials valkyrie-dev --zone us-east1-d
+gcloud container clusters get-credentials valkyrie-dev --zone us-central1-a
 kubectl create -f k8s/deployment.yaml
 kubectl create -f k8s/service.yaml
