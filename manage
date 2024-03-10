@@ -1,8 +1,8 @@
-export INSTANCE=
-export PORT_NO=
-export FIREWALL=
-export REGION=
-export ZONE=
+export INSTANCE=nucleus-jumphost-593
+export PORT_NO=8083
+export FIREWALL=permit-tcp-rule-945
+export REGION=europe-west1
+export ZONE=europe-west1-b
 ----------------------------------------------------------------------
 gcloud compute instances create $INSTANCE \
     --zone=$ZONE \
